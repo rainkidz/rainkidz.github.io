@@ -1,21 +1,209 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rainkidz Apps</title>
+<meta name="description" content="Apps and projects by rainkidz — Android app catalog, Toyota Parts Price, and more. Free, safe, open on GitHub.">
+<meta name="author" content="rainkidz">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Rainkidz Apps">
+<meta property="og:description" content="Apps and projects by rainkidz — Android app catalog, Toyota Parts Price, and more.">
+<meta property="og:url" content="https://rainkidz.github.io/">
+<meta name="twitter:card" content="summary">
+
+<link rel="icon" type="image/svg+xml" href="app-download/assets/icon.svg">
 <style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: -apple-system, "Segoe UI", Roboto, Arial, sans-serif; background: #fafafa; color: #222; text-align: center; padding: 64px 20px; }
-  h1 { font-size: 1.6rem; margin-bottom: 8px; }
-  p { color: #555; margin-bottom: 28px; }
-  a.card { display: inline-block; background: #fff; border: 1px solid #eee; border-radius: 14px; padding: 18px 28px; margin: 6px; text-decoration: none; color: #b71c1c; font-weight: 700; }
+  :root {
+    --bg: #0f172a;
+    --bg-alt: #16203a;
+    --surface: #1e293b;
+    --text: #e2e8f0;
+    --text-muted: #94a3b8;
+    --accent: #38bdf8;
+    --border: #334155;
+    --radius: 14px;
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #f8fafc;
+      --bg-alt: #eef2f7;
+      --surface: #ffffff;
+      --text: #0f172a;
+      --text-muted: #475569;
+      --accent: #0284c7;
+      --border: #e2e8f0;
+    }
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .container { max-width: 880px; margin: 0 auto; padding: 0 20px; width: 100%; }
+
+  .site-header { border-bottom: 1px solid var(--border); background: var(--bg-alt); }
+  .header-inner { display: flex; align-items: center; justify-content: space-between; height: 60px; }
+  .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; color: var(--text); }
+  .brand:hover { text-decoration: none; }
+  .brand-mark {
+    display: grid; place-items: center; width: 32px; height: 32px; border-radius: 8px;
+    background: linear-gradient(135deg, var(--accent), #818cf8);
+    color: #0f172a; font-size: 13px; font-weight: 800;
+  }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    padding: 10px 20px; border: 1px solid var(--border); border-radius: 10px;
+    font-size: 15px; font-weight: 600; color: var(--text); background: var(--surface);
+    cursor: pointer; transition: transform .15s ease;
+  }
+  .btn:hover { text-decoration: none; transform: translateY(-1px); }
+  .btn-primary { background: linear-gradient(135deg, var(--accent), #818cf8); color: #0f172a; border-color: transparent; }
+  .btn-ghost { background: transparent; }
+
+  main { flex: 1; }
+
+  .hero { padding: 64px 0 40px; text-align: center; background: radial-gradient(circle at 50% -20%, rgba(56,189,248,.15), transparent 60%); }
+  .hero h1 { font-size: 34px; }
+  .hero-tagline { margin: 10px auto 6px; color: var(--text-muted); font-size: 17px; max-width: 560px; }
+  .cta-note { font-size: 14px; color: var(--text-muted); }
+
+  .section { padding: 36px 0; }
+  .section h2 { font-size: 22px; margin-bottom: 20px; }
+
+  .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+  .project-card {
+    display: flex; flex-direction: column; gap: 12px; padding: 24px;
+    border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface);
+  }
+  .project-card-header { display: flex; align-items: center; gap: 14px; }
+  .project-icon {
+    width: 56px; height: 56px; border-radius: 14px; flex-shrink: 0;
+    display: grid; place-items: center;
+    background: linear-gradient(135deg, rgba(56,189,248,.2), rgba(129,140,248,.25));
+    font-size: 26px;
+  }
+  .project-icon img { width: 56px; height: 56px; border-radius: 14px; object-fit: cover; }
+  .project-card h3 { font-size: 19px; }
+  .project-badge {
+    display: inline-block; padding: 2px 10px; border-radius: 999px;
+    border: 1px solid var(--border); font-size: 12px; font-weight: 600; color: var(--text-muted);
+  }
+  .project-desc { color: var(--text-muted); font-size: 14px; flex-grow: 1; }
+  .card-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+  .card-actions .btn { flex: 1; min-width: 120px; }
+
+  .site-footer { padding: 24px 0; border-top: 1px solid var(--border); text-align: center; color: var(--text-muted); font-size: 14px; }
+  .site-footer a { color: var(--accent); }
 </style>
 </head>
 <body>
-  <h1>Rainkidz Apps</h1>
-  <p>Kumpulan aplikasi.</p>
-  <a class="card" href="toyotapartsprice/">Toyota Parts Price</a>
-  <a class="card" href="app-download/">App Download</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">RK</span>
+        <span class="brand-name">rainkidz</span>
+      </a>
+      <nav>
+        <a class="btn btn-ghost" href="https://github.com/rainkidz" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1>Rainkidz Apps</h1>
+        <p class="hero-tagline">
+          Kumpulan aplikasi &amp; proyek by rainkidz — free, safe, and always up to date.
+        </p>
+        <p class="cta-note">No ads &amp; trackers. Open source on GitHub.</p>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="projects-grid">
+
+          <article class="project-card">
+            <div class="project-card-header">
+              <div class="project-icon">
+                <img src="app-download/assets/icon.svg" alt="App Catalog icon"
+                     onerror="this.parentElement.textContent='📦'">
+              </div>
+              <div>
+                <h3>App Catalog</h3>
+                <span class="project-badge">Android · APK</span>
+              </div>
+            </div>
+            <p class="project-desc">
+              Katalog aplikasi Android by rainkidz (Tubenime, Wispmail, dan lainnya).
+              Download APK langsung, cek versi lama, QR, &amp; verifikasi SHA-256.
+            </p>
+            <div class="card-actions">
+              <a class="btn btn-primary" href="app-download/">Buka Katalog</a>
+              <a class="btn" href="https://github.com/rainkidz/app-download/releases" target="_blank" rel="noopener">Releases</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-card-header">
+              <div class="project-icon">
+                <img src="toyotapartsprice/icon.png" alt="Toyota Parts Price icon"
+                     onerror="this.parentElement.textContent='🚗'">
+              </div>
+              <div>
+                <h3>Toyota Parts Price</h3>
+                <span class="project-badge">Android · Play Store</span>
+              </div>
+            </div>
+            <p class="project-desc">
+              Akses cepat harga &amp; data genuine parts Toyota untuk jaringan TASTI.
+              Price simulation, bulk estimate, bookmark, dan lainnya.
+            </p>
+            <div class="card-actions">
+              <a class="btn btn-primary" href="toyotapartsprice/">Detail</a>
+              <a class="btn" href="https://play.google.com/store/apps/details?id=com.bip.partscatalogue" target="_blank" rel="noopener">Google Play</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-card-header">
+              <div class="project-icon">🐙</div>
+              <div>
+                <h3>GitHub</h3>
+                <span class="project-badge">Source code</span>
+              </div>
+            </div>
+            <p class="project-desc">
+              Source code, issues, dan rilis semua proyek ada di GitHub.
+              Temukan proyek open-source lainnya di sini.
+            </p>
+            <div class="card-actions">
+              <a class="btn btn-primary" href="https://github.com/rainkidz" target="_blank" rel="noopener">github.com/rainkidz</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year">2026</span> rainkidz · <a href="https://github.com/rainkidz" target="_blank" rel="noopener">GitHub</a></p>
+    </div>
+  </footer>
+
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>
