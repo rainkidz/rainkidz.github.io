@@ -79,6 +79,13 @@ function oldVersionsHtml(releases, currentVersionName) {
     "</tr></thead><tbody>" + rows + "</tbody></table></div></section>";
 }
 
+function shotFailed(img) {
+  var fig = img.closest(".shot");
+  if (fig) fig.style.display = "none";
+  var sec = document.getElementById("shots-section");
+  if (sec && !sec.querySelector('.shot:not([style*="none"])')) sec.style.display = "none";
+}
+
 function renderDetail(app, slug) {
   document.title = app.name + " - Rainstudio";
   var root = document.getElementById("app-root");
@@ -141,9 +148,9 @@ function renderDetail(app, slug) {
 
   var shots = (app.screenshots || []).filter(Boolean);
   var shotsHtml = shots.length
-    ? '<section class="section"><div class="section-head"><h2>Interface Previews</h2><span class="side-label">Scroll horizontally →</span></div>' +
+    ? '<section class="section" id="shots-section"><div class="section-head"><h2>Interface Previews</h2><span class="side-label">Scroll horizontally →</span></div>' +
       '<div class="shots" id="shots">' + shots.map(function (s) {
-        return '<figure class="shot"><img src="' + escapeHtml(resolveAsset(s)) + '" alt="' + escapeHtml(app.name) + ' screenshot" loading="lazy" onerror="this.closest(\'.shot\').style.display=\'none\'"></figure>';
+        return '<figure class="shot"><img src="' + escapeHtml(resolveAsset(s)) + '" alt="' + escapeHtml(app.name) + ' screenshot" loading="lazy" onerror="shotFailed(this)"></figure>';
       }).join("") + "</div></section>"
     : "";
 
