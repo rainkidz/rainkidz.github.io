@@ -37,7 +37,7 @@
 
       <div class="summary-box">
         <h3><img src="assets/icons/ui/shield-check.svg" alt="">Summary in Plain English</h3>
-        <p>Tubenime does not track you, does not have accounts, does not collect personal identity data, and processes video URLs entirely locally on your device. Zero remote analytics, zero proprietary tracking SDKs, zero centralized user logs.</p>
+        <p>Tubenime does not require accounts, does not collect personal identity data, and processes video URLs entirely locally on your device. The app is free and shows ads via Google AdMob, which may collect your Advertising ID and approximate location under Google's own policies. No remote analytics, no crash reporting, no centralized user logs.</p>
       </div>
 
       <section class="privacy-sec">
@@ -55,7 +55,6 @@
           <ul>
             <li class="no"><img src="assets/icons/ui/x-circle.svg" alt=""><span>Names, Emails, or Phone Numbers</span></li>
             <li class="no"><img src="assets/icons/ui/x-circle.svg" alt=""><span>Precise or Coarse GPS Location</span></li>
-            <li class="no"><img src="assets/icons/ui/x-circle.svg" alt=""><span>Advertising IDs (AAID)</span></li>
             <li class="no"><img src="assets/icons/ui/x-circle.svg" alt=""><span>Hardware Fingerprints or MAC</span></li>
           </ul>
         </div>
@@ -64,9 +63,9 @@
       <section class="privacy-sec">
         <h2><span class="num">02</span>How We Use Data</h2>
         <p>Input URLs are parsed dynamically in runtime memory to decode publicly available video stream endpoints and captions.</p>
-        <p><b>Local Parsing Only:</b> The parsing engine operates directly within your client runtime. No intermediary proxy, scraping gateway, or telemetry aggregator receives the link.</p>
+        <p><b>Local Parsing Only:</b> The parsing engine operates directly within your client runtime. No intermediary proxy, scraping gateway, or telemetry aggregator receives the link. (Separately, the bundled Google AdMob SDK communicates with Google's ad servers as described below.)</p>
         <p><b>No User Profiling:</b> We maintain zero database records of queries, parsed links, or historical downloads. Your search or stream history is kept solely within your device's private SQLite sandbox.</p>
-        <p><b>No Commercial Exploitation:</b> Your activity is never packaged, traded, sold, or shared with commercial brokers or ad exchanges.</p>
+        <p><b>Advertising:</b> To keep the app free, Tubenime shows ads served by Google AdMob. AdMob may use your Advertising ID and approximate location to personalize ads, under <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>. You can reset or delete your Advertising ID in Android Settings → Privacy → Ads.</p>
       </section>
 
       <section class="privacy-sec">
@@ -92,12 +91,13 @@
           <p>Connections are routed directly to public media CDNs (such as YouTube, TikTok, Instagram, Threads, and Facebook) based on the URL provided. Those platforms may observe your IP address and standard HTTP request headers, subject to their respective terms and privacy policies.</p>
         </div>
         <div class="mini-box mono-sm mt-16">
-          <h4>Zero Third-Party SDK Manifest</h4>
+          <h4>Third-Party SDK Manifest</h4>
           <p>Our source code and binary release artifacts include:</p>
           <div class="kv">
-            <div>• NO Google Firebase Analytics or Crashlytics</div>
-            <div>• NO Google AdMob, Unity, or AppLovin SDKs</div>
-            <div>• NO Sentry, Adjust, or AppsFlyer trackers</div>
+            <div>• Google AdMob (play-services-ads) — advertising</div>
+            <div>• Google Play Billing — in-app purchases</div>
+            <div>• NO Firebase Analytics or Crashlytics</div>
+            <div>• NO Unity, AppLovin, Sentry, Adjust, or AppsFlyer SDKs</div>
           </div>
         </div>
       </section>
@@ -133,7 +133,7 @@
 
       <div class="arch-note">
         <h3><img src="assets/icons/ui/shield-check.svg" alt="">Rainstudio Privacy Architecture Note</h3>
-        <p>This document serves as the shared minimal-privacy blueprint across Rainstudio software. Sister applications customize specific local data models while honoring identical zero-tracker baselines:</p>
+        <p>This document serves as the shared minimal-data blueprint across Rainstudio software. Sister applications customize specific local data models under the same principles:</p>
         <div class="arch-table">
           <div class="arow"><div><b>Wispmail</b></div><div><span>Temporary disposable session tokens encrypted on local hardware</span></div></div>
           <div class="arow"><div><b>Toyota Parts Price</b></div><div><span>Internal catalog authentication keys restricted to regional intranet sandbox</span></div></div>
