@@ -1,5 +1,5 @@
 (function () {
-  document.documentElement.classList.add("js");
+  document.documentElement.classList.add("js", "reveal");
 
   function revealAll(root) {
     var els = Array.prototype.slice.call((root || document).querySelectorAll("[data-reveal]:not(.in)"));
@@ -18,12 +18,14 @@
     els.forEach(function (el) { io.observe(el); });
   }
 
-  if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    document.addEventListener("DOMContentLoaded", function () {
-      Array.prototype.forEach.call(document.querySelectorAll("[data-reveal]"), function (el) {
-        el.classList.add("in");
-      });
+  function revealEverything() {
+    Array.prototype.forEach.call(document.querySelectorAll("[data-reveal]:not(.in)"), function (el) {
+      el.classList.add("in");
     });
+  }
+
+  if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    document.addEventListener("DOMContentLoaded", revealEverything);
     window.__revealScan = function () {};
     return;
   }
@@ -33,5 +35,7 @@
   } else {
     revealAll(document);
   }
+  // Safety net: never leave content hidden (e.g. observer never fires).
+  setTimeout(revealEverything, 2500);
   window.__revealScan = revealAll;
 })();
