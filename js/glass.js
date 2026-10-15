@@ -4,7 +4,7 @@
   var canvas = document.createElement("canvas");
   canvas.id = "glass";
   canvas.setAttribute("aria-hidden", "true");
-  document.body.insertBefore(canvas, document.body.firstChild);
+  document.body.appendChild(canvas); // after rain canvas (if present) so droplets render above rain
   var ctx = canvas.getContext("2d");
 
   var DPR = Math.min(window.devicePixelRatio || 1, 1.5);
@@ -46,7 +46,7 @@
     canvas.width = W;
     canvas.height = H;
     var area = window.innerWidth * window.innerHeight;
-    var nStatic = Math.max(60, Math.min(150, Math.floor(area / 11000)));
+    var nStatic = Math.max(45, Math.min(110, Math.floor(area / 14000)));
     statics = [];
     for (var i = 0; i < nStatic; i++) {
       statics.push({
@@ -59,7 +59,7 @@
       });
     }
     runners = [];
-    var nRun = Math.max(3, Math.min(7, Math.floor(area / 220000)));
+    var nRun = Math.max(2, Math.min(5, Math.floor(area / 260000)));
     for (var j = 0; j < nRun; j++) spawnRunner(true);
     trails = [];
   }

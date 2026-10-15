@@ -504,7 +504,8 @@ html.js.reveal .d3 { transition-delay: 0.18s; }
   z-index: 0;
   pointer-events: none;
 }
-#rain { opacity: 0.55; }
+#rain { opacity: 0.35; }
+/* glass canvas paints above rain via DOM order (glass.js runs after rain.js) */
 
 main, .site-footer { position: relative; z-index: 1; }
 
