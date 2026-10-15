@@ -27,10 +27,14 @@ function escapeHtml(s) {
   });
 }
 
-function createRow(app, slug) {
+function createRow(app, slug, index) {
   var isPlay = !app.url && !!app.playStoreUrl;
   var row = document.createElement("article");
   row.className = "app-row";
+  row.setAttribute("data-reveal", "");
+  if (index % 4 === 1) row.classList.add("d1");
+  else if (index % 4 === 2) row.classList.add("d2");
+  else if (index % 4 === 3) row.classList.add("d3");
 
   var meta = [];
   var size = formatSize(app.size);
@@ -75,10 +79,11 @@ function loadApps() {
     bundle.results.forEach(function (result, i) {
       var app = result.status === "fulfilled" ? result.value : null;
       if (app && (app.url || app.playStoreUrl)) {
-        list.appendChild(createRow(app, bundle.slugs[i]));
+        list.appendChild(createRow(app, bundle.slugs[i], n));
         n++;
       }
     });
+    if (window.__revealScan) window.__revealScan(list);
     if (n === 0) list.innerHTML = '<p class="loading">No apps available.</p>';
     if (count) count.textContent = n + " STABLE BUILD" + (n === 1 ? "" : "S");
   }).catch(function () {

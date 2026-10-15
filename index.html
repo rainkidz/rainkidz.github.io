@@ -13,6 +13,7 @@
   <meta name="twitter:card" content="summary">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
   <header class="site-header">
@@ -31,14 +32,14 @@
   <main>
     <section class="hero">
       <div class="container">
-        <span class="eyebrow"><span class="dot"></span>Rainfo<span style="color:var(--accent)">[r]</span>ge Labs</span>
-        <h1>Rainstudio Apps</h1>
-        <p class="hero-tagline">Independent Android apps — free, safe, always up to date.</p>
-        <p class="hero-note">Free to download · Contains ads · Open source on GitHub.</p>
-        <p class="hero-cta">
+        <span class="eyebrow" data-reveal><span class="dot"></span>Rainfo<span style="color:var(--accent)">[r]</span>ge Labs</span>
+        <h1 data-reveal>Rainstudio Apps</h1>
+        <p class="hero-tagline" data-reveal>Independent Android apps — free, safe, always up to date.</p>
+        <p class="hero-note" data-reveal>Free to download · Contains ads · Open source on GitHub.</p>
+        <p class="hero-cta" data-reveal>
           <a class="btn btn-primary" href="#catalog">Browse apps <img class="i i-16" src="assets/icons/ui/download.svg" alt=""></a>
         </p>
-        <div class="trust-strip">
+        <div class="trust-strip" data-reveal>
           <div class="trust-item">
             <img src="assets/icons/ui/archive.svg" alt="">
             <div><b>Full version history</b><span>Every release kept</span></div>
@@ -61,7 +62,7 @@
 
     <section class="section" id="catalog">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head" data-reveal>
           <h2>Application Catalog</h2>
           <span class="side-label" id="build-count"></span>
         </div>
@@ -74,31 +75,31 @@
 
     <section class="section" id="install">
       <div class="container">
-        <div class="section-head"><h2>How to install APKs</h2></div>
+        <div class="section-head" data-reveal><h2>How to install APKs</h2></div>
         <p class="section-sub">Straightforward sideloading guide for Android 7.0 and above.</p>
         <div class="steps-grid">
-          <div class="step-card">
+          <div class="step-card" data-reveal>
             <div class="step-num">1</div>
             <h3>Download .apk</h3>
             <p>Tap the download button above or grab the asset from GitHub Releases.</p>
           </div>
-          <div class="step-card">
+          <div class="step-card d1" data-reveal>
             <div class="step-num">2</div>
             <h3>Open Files</h3>
             <p>Tap the notification when finished or locate the file in your system Downloads folder.</p>
           </div>
-          <div class="step-card">
+          <div class="step-card d2" data-reveal>
             <div class="step-num">3</div>
             <h3>Allow Source</h3>
             <p>Toggle "Install unknown apps" for your browser/file manager if requested by Android.</p>
           </div>
-          <div class="step-card">
+          <div class="step-card d3" data-reveal>
             <div class="step-num">4</div>
             <h3>Launch &amp; Enjoy</h3>
             <p>Tap Install. The application is now ready in your app drawer without extra accounts.</p>
           </div>
         </div>
-        <div class="note-box">
+        <div class="note-box" data-reveal>
           <img src="assets/icons/ui/info.svg" alt="">
           <p><b>Note on Google Play Protect</b><br>
           Play Protect may show an "Unrecognized app" or "Blocked by Play Protect" prompt for direct sideloads. This is normal for apps distributed outside the Play Store because they are self-signed. You can safely choose "Install anyway" after verifying our published SHA-256 hash.</p>
@@ -108,7 +109,7 @@
 
     <section class="section" id="about">
       <div class="container">
-        <div class="about-card">
+        <div class="about-card" data-reveal>
           <p class="eyebrow-inline">● About Rainstudio</p>
           <h2>Artisanal software, crafted for focus.</h2>
           <p>Rainstudio is an independent one-person software lab crafting lightweight Android utilities with native Kotlin/Jetpack Compose. Apps are free to download and contain ads; source code is open on GitHub.</p>
@@ -118,22 +119,22 @@
 
     <section class="section" id="faq-preview">
       <div class="container">
-        <div class="section-head"><h2>Frequently Asked Questions</h2></div>
+        <div class="section-head" data-reveal><h2>Frequently Asked Questions</h2></div>
         <p class="section-sub">Clear technical answers on security, architecture, and licensing. <a href="faq.html">View all →</a></p>
         <div class="faq-list">
-          <details class="faq-item">
+          <details class="faq-item" data-reveal>
             <summary>Are these apps safe? <img src="assets/icons/ui/chevron-down.svg" alt=""></summary>
             <div class="faq-body"><p>Yes. Every APK is built and released by rainkidz, hosted on GitHub Releases, and each app page shows a SHA-256 fingerprint so you can verify the file after downloading. Apps are free and contain ads (Google AdMob); no account is required.</p></div>
           </details>
-          <details class="faq-item">
+          <details class="faq-item d1" data-reveal>
             <summary>Why does Play Protect warn during installation? <img src="assets/icons/ui/chevron-down.svg" alt=""></summary>
             <div class="faq-body"><p>Play Protect warns about any app not installed through the Play Store. This is normal for sideloaded apps — review the SHA-256 fingerprint on the app page, then install anyway.</p></div>
           </details>
-          <details class="faq-item">
+          <details class="faq-item d2" data-reveal>
             <summary>How do updates work? <img src="assets/icons/ui/chevron-down.svg" alt=""></summary>
             <div class="faq-body"><p>Tubenime checks for new versions in Settings and notifies you; Toyota Parts Price updates automatically via the Play Store. For Wispmail, check the catalog for new releases.</p></div>
           </details>
-          <details class="faq-item">
+          <details class="faq-item d3" data-reveal>
             <summary>Where are old versions? <img src="assets/icons/ui/chevron-down.svg" alt=""></summary>
             <div class="faq-body"><p>Open an app's detail page — the "Version Archive" table lists releases with direct download links. Older builds are also on <a href="https://github.com/rainkidz/app-download/releases" target="_blank" rel="noopener">GitHub Releases</a>.</p></div>
           </details>
@@ -153,6 +154,7 @@
     </div>
   </footer>
 
+  <script src="js/reveal.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

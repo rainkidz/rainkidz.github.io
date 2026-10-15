@@ -73,7 +73,7 @@ function oldVersionsHtml(releases, currentVersionName) {
       '<td class="num"><a href="' + escapeHtml(link) + '" target="_blank" rel="noopener">Download</a></td>' +
     "</tr>";
   }).join("");
-  return '<section class="section"><div class="section-head"><h2>Version Archive</h2></div>' +
+  return '<section class="section" data-reveal><div class="section-head"><h2>Version Archive</h2></div>' +
     '<div class="table-wrap"><table class="version-table"><thead><tr>' +
     "<th>Version</th><th>Size</th><th>Released</th><th>Architecture</th><th>Download</th>" +
     "</tr></thead><tbody>" + rows + "</tbody></table></div></section>";
@@ -111,7 +111,7 @@ function renderDetail(app, slug) {
   var panel;
   if (hasApk) {
     panel =
-      '<section class="dl-panel"><div class="dl-row">' +
+      '<section class="dl-panel" data-reveal><div class="dl-row">' +
         '<a class="btn btn-primary" href="' + escapeHtml(app.url) + '"><img class="i i-18" src="assets/icons/ui/download.svg" alt="">Download APK (v' + escapeHtml(app.versionName) + ')</a>' +
         '<button class="btn btn-ghost btn-sm" id="qr-toggle" type="button"><img class="i i-16" src="assets/icons/ui/qr.svg" alt="">Show QR</button>' +
       "</div>" +
@@ -125,7 +125,7 @@ function renderDetail(app, slug) {
       '<div class="link-row">' + links.join("") + "</div></section>";
   } else {
     panel =
-      '<section class="dl-panel"><div class="dl-row"><div>' +
+      '<section class="dl-panel" data-reveal><div class="dl-row"><div>' +
         '<p class="verify-label" style="margin:0 0 4px">Official distribution channel</p>' +
         "<p><b>Available on Android via Google Play</b></p>" +
       "</div>" +
@@ -142,28 +142,29 @@ function renderDetail(app, slug) {
     var parts = String(f).split(/[.]\s+(?=[A-Z])/);
     var title = parts.shift();
     var desc = parts.join(". ");
-    return '<div class="cap-card"><div class="tile"><img src="assets/icons/ui/' + icon + '" alt=""></div>' +
+    var dcls = i % 4 === 1 ? " d1" : i % 4 === 2 ? " d2" : i % 4 === 3 ? " d3" : "";
+    return '<div class="cap-card' + dcls + '" data-reveal><div class="tile"><img src="assets/icons/ui/' + icon + '" alt=""></div>' +
       "<h3>" + escapeHtml(title) + "</h3>" + (desc ? "<p>" + escapeHtml(desc) + "</p>" : "") + "</div>";
   }).join("");
 
   var shots = (app.screenshots || []).filter(Boolean);
   var shotsHtml = shots.length
-    ? '<section class="section" id="shots-section"><div class="section-head"><h2>Interface Previews</h2><span class="side-label">Scroll horizontally →</span></div>' +
+    ? '<section class="section" id="shots-section" data-reveal><div class="section-head"><h2>Interface Previews</h2><span class="side-label">Scroll horizontally →</span></div>' +
       '<div class="shots" id="shots">' + shots.map(function (s) {
         return '<figure class="shot"><img src="' + escapeHtml(resolveAsset(s)) + '" alt="' + escapeHtml(app.name) + ' screenshot" loading="lazy" onerror="shotFailed(this)"></figure>';
       }).join("") + "</div></section>"
     : "";
 
   var changelogHtml = (app.changelog || []).length
-    ? '<section class="section"><div class="rel-head"><h3>What\'s new in v' + escapeHtml(app.versionName) + "</h3>" +
+    ? '<section class="section" data-reveal><div class="rel-head"><h3>What\'s new in v' + escapeHtml(app.versionName) + "</h3>" +
       (date ? '<time>Published ' + escapeHtml(date) + "</time>" : "") + "</div>" +
       '<ul class="rel-list">' + app.changelog.map(function (c) { return "<li>" + escapeHtml(c) + "</li>"; }).join("") + "</ul></section>"
     : "";
 
   var installHtml = hasApk
-    ? '<section class="section"><details class="collapse"><summary><span><b><img src="assets/icons/ui/info.svg" alt="">How to Install Sideloaded APK</b><br><small>Step-by-step guidance for manual Android package deployment</small></span><img src="assets/icons/ui/chevron-down.svg" alt=""></summary>' +
+    ? '<section class="section" data-reveal><details class="collapse"><summary><span><b><img src="assets/icons/ui/info.svg" alt="">How to Install Sideloaded APK</b><br><small>Step-by-step guidance for manual Android package deployment</small></span><img src="assets/icons/ui/chevron-down.svg" alt=""></summary>' +
       '<ol class="steps"><li>Tap <b>Download APK</b> (or scan the QR code with your phone).</li><li>Open the downloaded file.</li><li>If prompted, enable <b>"Install unknown apps"</b> for your browser.</li><li>Tap <b>Install</b>.</li></ol></details></section>'
-    : '<section class="section"><div class="section-head"><h2>How to Install</h2></div><div class="steps-grid" style="grid-template-columns:repeat(3,1fr)">' +
+    : '<section class="section" data-reveal><div class="section-head"><h2>How to Install</h2></div><div class="steps-grid" style="grid-template-columns:repeat(3,1fr)">' +
       '<div class="step-card"><div class="step-num">1</div><h3>Open Store</h3><p>Tap "Get it on Google Play" to open the official Play Store listing.</p></div>' +
       '<div class="step-card"><div class="step-num">2</div><h3>Google Auth</h3><p>Sign in with your Google account if prompted on your Android phone.</p></div>' +
       '<div class="step-card"><div class="step-num">3</div><h3>Install &amp; Launch</h3><p>Tap Install and launch directly from your app drawer once finished.</p></div>' +
@@ -171,15 +172,17 @@ function renderDetail(app, slug) {
 
   root.innerHTML =
     '<nav class="breadcrumb"><a href="index.html"><img class="i i-14" src="assets/icons/ui/arrow-left.svg" alt="">Back to catalog</a></nav>' +
-    '<section class="app-hero"><div class="app-icon-lg"><img src="' + escapeHtml(resolveAsset(app.icon)) + '" alt="' + escapeHtml(app.name) + ' icon" onerror="this.style.display=\'none\'"></div>' +
+    '<section class="app-hero" data-reveal><div class="app-icon-lg"><img src="' + escapeHtml(resolveAsset(app.icon)) + '" alt="' + escapeHtml(app.name) + ' icon" onerror="this.style.display=\'none\'"></div>' +
     '<div class="app-hero-meta"><h1>' + escapeHtml(app.name) + ' <span class="pill">v' + escapeHtml(app.versionName) + "</span></h1>" +
     '<p class="app-tagline">' + escapeHtml(app.tagline || "") + '</p><p class="pkg-line">' + metaParts.join(" <span>·</span> ") + "</p></div></section>" +
     panel +
-    (app.description ? '<section class="section"><div class="section-head"><h2>About ' + escapeHtml(app.name) + "</h2></div>" + '<p class="section-sub" style="max-width:75ch">' + escapeHtml(app.description) + "</p></section>" : "") +
-    (featuresHtml ? '<section class="section"><div class="section-head"><h2>Key Capabilities</h2></div><div class="cap-grid">' + featuresHtml + "</div></section>" : "") +
+    (app.description ? '<section class="section" data-reveal><div class="section-head"><h2>About ' + escapeHtml(app.name) + "</h2></div>" + '<p class="section-sub" style="max-width:75ch">' + escapeHtml(app.description) + "</p></section>" : "") +
+    (featuresHtml ? '<section class="section"><div class="section-head" data-reveal><h2>Key Capabilities</h2></div><div class="cap-grid">' + featuresHtml + "</div></section>" : "") +
     shotsHtml + changelogHtml + '<div id="versions-section"></div>' +
-    (!hasApk && !app.repoSlug ? '<section class="section"><div class="note-box"><img src="assets/icons/ui/info.svg" alt=""><p>This app is distributed via the Play Store and updates automatically.</p></div></section>' : "") +
+    (!hasApk && !app.repoSlug ? '<section class="section" data-reveal><div class="note-box"><img src="assets/icons/ui/info.svg" alt=""><p>This app is distributed via the Play Store and updates automatically.</p></div></section>' : "") +
     installHtml;
+
+  if (window.__revealScan) window.__revealScan(root);
 
   var copyPkg = document.getElementById("copy-pkg");
   if (copyPkg && app.package) copyPkg.addEventListener("click", function (e) {

@@ -8,6 +8,7 @@
   <meta name="robots" content="noindex">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
   <header class="site-header">
@@ -25,7 +26,7 @@
 
   <main>
     <div class="container">
-      <div class="center-404">
+      <div class="center-404" data-reveal>
         <span class="status-pill"><span class="dot"></span>HTTP 404 · Resource_not_found</span>
         <div><span class="giant-404">404</span></div>
         <h1>This page wandered off like rain down a gutter.</h1>
@@ -39,19 +40,19 @@
       <section class="section" style="padding-top:8px">
         <p class="side-label" style="text-align:center; margin-bottom:18px">Alternative destinations</p>
         <div class="dest-grid">
-          <a class="dest-card" href="app.html?slug=tubenime">
+          <a class="dest-card" data-reveal href="app.html?slug=tubenime">
             <b>Tubenime <img src="assets/icons/ui/external.svg" alt=""></b>
             <span>com.rainkidz.tubenime</span>
           </a>
-          <a class="dest-card" href="app.html?slug=toyotapartsprice">
+          <a class="dest-card d1" data-reveal href="app.html?slug=toyotapartsprice">
             <b>Toyota Parts Price <img src="assets/icons/ui/external.svg" alt=""></b>
             <span>com.bip.partscatalogue</span>
           </a>
-          <a class="dest-card" href="faq.html">
+          <a class="dest-card d2" data-reveal href="faq.html">
             <b>FAQ <img src="assets/icons/ui/info.svg" alt=""></b>
             <span>docs &amp; verification</span>
           </a>
-          <a class="dest-card" href="https://github.com/rainkidz" target="_blank" rel="noopener">
+          <a class="dest-card d3" data-reveal href="https://github.com/rainkidz" target="_blank" rel="noopener">
             <b>GitHub Repository <img src="assets/icons/ui/code.svg" alt=""></b>
             <span>source &amp; releases</span>
           </a>
@@ -75,6 +76,7 @@
     </div>
   </footer>
 
+  <script src="js/reveal.js"></script>
   <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>

@@ -7,6 +7,7 @@
   <meta name="description" content="Frequently asked questions: safety, APK sideloading, updates, and versions. Rainstudio by rainkidz.">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
   <header class="site-header">
@@ -25,7 +26,7 @@
   <main>
     <div class="container">
       <nav class="breadcrumb"><a href="index.html"><img class="i i-14" src="assets/icons/ui/arrow-left.svg" alt="">Back to catalog</a></nav>
-      <section style="padding:26px 0 8px">
+      <section style="padding:26px 0 8px" data-reveal>
         <h1 style="font-size:32px">Frequently Asked Questions</h1>
         <p class="section-sub" style="margin-top:8px">Clear technical answers on security, APK sideloading, updates, and studio architecture.</p>
         <div class="filter-wrap">
@@ -35,21 +36,21 @@
       </section>
 
       <section class="faq-group" data-group>
-        <h2 class="faq-section-title"><img src="assets/icons/ui/shield-check.svg" alt="">Safety &amp; Trust</h2>
+        <h2 class="faq-section-title" data-reveal><img src="assets/icons/ui/shield-check.svg" alt="">Safety &amp; Trust</h2>
         <div class="faq-list">
-          <details class="faq-item" open>
+          <details class="faq-item" data-reveal open>
             <summary>Are these apps safe to install? <img src="assets/icons/ui/plus.svg" alt=""></summary>
             <div class="faq-body">
               <p>Yes. Every APK here is built and released by rainkidz, hosted on GitHub Releases, and each app page shows a SHA-256 fingerprint so you can verify the file after downloading. Apps are free and contain ads (Google AdMob); no account is required. No analytics or crash-reporting SDKs are included.</p>
             </div>
           </details>
-          <details class="faq-item">
+          <details class="faq-item d1" data-reveal>
             <summary>Why does Google Play Protect show a warning? <img src="assets/icons/ui/plus.svg" alt=""></summary>
             <div class="faq-body">
               <p>Play Protect warns about any app that is not installed through the Play Store. This is normal for sideloaded apps. Review the SHA-256 fingerprint on the app page, then choose to install anyway.</p>
             </div>
           </details>
-          <details class="faq-item">
+          <details class="faq-item d2" data-reveal>
             <summary>Toyota Parts Price needs a login? <img src="assets/icons/ui/plus.svg" alt=""></summary>
             <div class="faq-body">
               <p>Yes. Toyota Parts Price is an internal app for the TASTI network — login with a registered account is required. For credentials and authorization, contact <a href="mailto:support@tasti.id">support@tasti.id</a>.</p>
@@ -59,9 +60,9 @@
       </section>
 
       <section class="faq-group" data-group>
-        <h2 class="faq-section-title"><img src="assets/icons/ui/download.svg" alt="">Installation</h2>
+        <h2 class="faq-section-title" data-reveal><img src="assets/icons/ui/download.svg" alt="">Installation</h2>
         <div class="faq-list">
-          <details class="faq-item">
+          <details class="faq-item" data-reveal>
             <summary>How do I install an APK? <img src="assets/icons/ui/plus.svg" alt=""></summary>
             <div class="faq-body">
               <ol>
@@ -72,7 +73,7 @@
               </ol>
             </div>
           </details>
-          <details class="faq-item">
+          <details class="faq-item d1" data-reveal>
             <summary>How do I verify the SHA-256 checksum? <img src="assets/icons/ui/plus.svg" alt=""></summary>
             <div class="faq-body">
               <p>Copy the fingerprint from the app page (the <b>Copy Hash</b> button), then hash the downloaded file and compare:</p>
@@ -85,15 +86,15 @@ Linux:   sha256sum app.apk</div>
       </section>
 
       <section class="faq-group" data-group>
-        <h2 class="faq-section-title"><img src="assets/icons/ui/refresh.svg" alt="">Updates &amp; Versions</h2>
+        <h2 class="faq-section-title" data-reveal><img src="assets/icons/ui/refresh.svg" alt="">Updates &amp; Versions</h2>
         <div class="faq-list">
-          <details class="faq-item">
+          <details class="faq-item" data-reveal>
             <summary>How do updates work? <img src="assets/icons/ui/plus.svg" alt=""></summary>
             <div class="faq-body">
               <p>It depends on the app. Tubenime checks for new versions in Settings and notifies you; tap Update to grab the new APK from GitHub Releases. Toyota Parts Price updates automatically via the Play Store. For Wispmail, check the catalog's Version Archive for new releases. Apps outside Google Play cannot auto-update via the Play Store.</p>
             </div>
           </details>
-          <details class="faq-item">
+          <details class="faq-item d1" data-reveal>
             <summary>Where can I find older versions? <img src="assets/icons/ui/plus.svg" alt=""></summary>
             <div class="faq-body">
               <p>Open an app's detail page — the <b>Version Archive</b> table lists releases with direct download links. Older builds are also on <a href="https://github.com/rainkidz/app-download/releases" target="_blank" rel="noopener">GitHub Releases</a>.</p>
@@ -105,7 +106,7 @@ Linux:   sha256sum app.apk</div>
       <p class="loading hidden" id="faq-empty">No questions match your filter.</p>
 
       <section>
-        <div class="contact-card">
+        <div class="contact-card" data-reveal>
           <div>
             <h3><img src="assets/icons/ui/info.svg" alt="">Still have questions?</h3>
             <p>Check the source code on GitHub or reach out directly to the studio workshop.</p>
@@ -131,6 +132,7 @@ Linux:   sha256sum app.apk</div>
     </div>
   </footer>
 
+  <script src="js/reveal.js"></script>
   <script src="js/faq.js"></script>
 </body>
 </html>

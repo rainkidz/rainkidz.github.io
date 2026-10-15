@@ -7,6 +7,7 @@
   <meta name="description" content="Privacy policy for Tubenime by Rainstudio: what data is handled on-device, what is never collected, and how to contact us.">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
   <header class="site-header">
@@ -26,7 +27,7 @@
     <div class="container privacy-doc">
       <nav class="breadcrumb"><a href="app.html?slug=tubenime"><img class="i i-14" src="assets/icons/ui/arrow-left.svg" alt="">Back to Tubenime catalog</a></nav>
 
-      <div class="scope-bar">
+      <div class="scope-bar" data-reveal>
         <span><span class="dot"></span>Scope: Tubenime for Android · Architecture: Client-Only</span>
         <span>Family: Rainstudio Open Source App</span>
       </div>
@@ -35,12 +36,12 @@
       <h1>Privacy Policy — Tubenime</h1>
       <p class="privacy-dates">Last updated: <b>January 15, 2026</b> · Effective date: <b>October 12, 2025</b> · Document ID: <b>PDL-TN-2026-A</b></p>
 
-      <div class="summary-box">
+      <div class="summary-box" data-reveal>
         <h3><img src="assets/icons/ui/shield-check.svg" alt="">Summary in Plain English</h3>
         <p>Tubenime does not require accounts, does not collect personal identity data, and processes video URLs entirely locally on your device. The app is free and shows ads via Google AdMob, which may collect your Advertising ID and approximate location under Google's own policies. No remote analytics, no crash reporting, no centralized user logs.</p>
       </div>
 
-      <section class="privacy-sec">
+      <section class="privacy-sec" data-reveal>
         <h2><span class="num">01</span>Data We Collect</h2>
         <p>Tubenime is designed strictly around the principle of data minimization. The application operates solely as an on-device utility and media manifest parser.</p>
         <div class="mini-box">
@@ -60,7 +61,7 @@
         </div>
       </section>
 
-      <section class="privacy-sec">
+      <section class="privacy-sec" data-reveal>
         <h2><span class="num">02</span>How We Use Data</h2>
         <p>Input URLs are parsed dynamically in runtime memory to decode publicly available video stream endpoints and captions.</p>
         <p><b>Local Parsing Only:</b> The parsing engine operates directly within your client runtime. No intermediary proxy, scraping gateway, or telemetry aggregator receives the link. (Separately, the bundled Google AdMob SDK communicates with Google's ad servers as described below.)</p>
@@ -68,7 +69,7 @@
         <p><b>Advertising:</b> To keep the app free, Tubenime shows ads served by Google AdMob. AdMob may use your Advertising ID and approximate location to personalize ads, under <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>. You can reset or delete your Advertising ID in Android Settings → Privacy → Ads.</p>
       </section>
 
-      <section class="privacy-sec">
+      <section class="privacy-sec" data-reveal>
         <h2><span class="num">03</span>Data Storage &amp; Security</h2>
         <p>Tubenime has zero cloud infrastructure. We operate zero centralized servers, zero remote databases, and zero authentication clusters.</p>
         <div class="mini-grid">
@@ -83,7 +84,7 @@
         </div>
       </section>
 
-      <section class="privacy-sec">
+      <section class="privacy-sec" data-reveal>
         <h2><span class="num">04</span>Third-Party Services &amp; Network Requests</h2>
         <p>When performing stream resolutions or downloads, Tubenime functions as a standard user-agent client establishing direct HTTP/HTTPS connections to media hosting providers.</p>
         <div class="mini-box mono-sm">
@@ -102,12 +103,12 @@
         </div>
       </section>
 
-      <section class="privacy-sec">
+      <section class="privacy-sec" data-reveal>
         <h2><span class="num">05</span>Children's Privacy</h2>
         <p>Our software does not address or knowingly solicit information from children under 13 (or under 16 in certain EEA jurisdictions). Because Tubenime does not require account registration, collect personal profiles, or maintain server-side records, we do not store child-identifiable telemetry in any format.</p>
       </section>
 
-      <section class="privacy-sec">
+      <section class="privacy-sec" data-reveal>
         <h2><span class="num">06</span>Changes to This Policy</h2>
         <p>We may periodically review and update this privacy statement to reflect improvements in on-device architecture, new supported platforms, or regulatory requirements.</p>
         <div class="audit-row">
@@ -116,7 +117,7 @@
         </div>
       </section>
 
-      <section class="privacy-sec">
+      <section class="privacy-sec" data-reveal>
         <h2><span class="num">07</span>Contact Us</h2>
         <p>For questions, architectural audits, or clarifications regarding this privacy policy, you are welcome to file a public issue or reach our development studio directly:</p>
         <div class="contact-grid">
@@ -131,7 +132,7 @@
         </div>
       </section>
 
-      <div class="arch-note">
+      <div class="arch-note" data-reveal>
         <h3><img src="assets/icons/ui/shield-check.svg" alt="">Rainstudio Privacy Architecture Note</h3>
         <p>This document serves as the shared minimal-data blueprint across Rainstudio software. Sister applications customize specific local data models under the same principles:</p>
         <div class="arch-table">
@@ -154,6 +155,7 @@
     </div>
   </footer>
 
+  <script src="js/reveal.js"></script>
   <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>
