@@ -1,110 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rainkidz Apps</title>
-<meta name="description" content="Apps and projects by rainkidz — Android app catalog, Toyota Parts Price, and more. Free, safe, open on GitHub.">
-<meta name="author" content="rainkidz">
-
-<meta property="og:type" content="website">
-<meta property="og:title" content="Rainkidz Apps">
-<meta property="og:description" content="Apps and projects by rainkidz — Android app catalog, Toyota Parts Price, and more.">
-<meta property="og:url" content="https://rainkidz.github.io/">
-<meta name="twitter:card" content="summary">
-
-<link rel="icon" type="image/svg+xml" href="app-download/assets/icon.svg">
-<style>
-  :root {
-    --bg: #0f172a;
-    --bg-alt: #16203a;
-    --surface: #1e293b;
-    --text: #e2e8f0;
-    --text-muted: #94a3b8;
-    --accent: #38bdf8;
-    --border: #334155;
-    --radius: 14px;
-  }
-  @media (prefers-color-scheme: light) {
-    :root {
-      --bg: #f8fafc;
-      --bg-alt: #eef2f7;
-      --surface: #ffffff;
-      --text: #0f172a;
-      --text-muted: #475569;
-      --accent: #0284c7;
-      --border: #e2e8f0;
-    }
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    line-height: 1.6;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-  }
-  a { color: var(--accent); text-decoration: none; }
-  a:hover { text-decoration: underline; }
-
-  .container { max-width: 880px; margin: 0 auto; padding: 0 20px; width: 100%; }
-
-  .site-header { border-bottom: 1px solid var(--border); background: var(--bg-alt); }
-  .header-inner { display: flex; align-items: center; justify-content: space-between; height: 60px; }
-  .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; color: var(--text); }
-  .brand:hover { text-decoration: none; }
-  .brand-mark {
-    display: grid; place-items: center; width: 32px; height: 32px; border-radius: 8px;
-    background: linear-gradient(135deg, var(--accent), #818cf8);
-    color: #0f172a; font-size: 13px; font-weight: 800;
-  }
-  .btn {
-    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-    padding: 10px 20px; border: 1px solid var(--border); border-radius: 10px;
-    font-size: 15px; font-weight: 600; color: var(--text); background: var(--surface);
-    cursor: pointer; transition: transform .15s ease;
-  }
-  .btn:hover { text-decoration: none; transform: translateY(-1px); }
-  .btn-primary { background: linear-gradient(135deg, var(--accent), #818cf8); color: #0f172a; border-color: transparent; }
-  .btn-ghost { background: transparent; }
-
-  main { flex: 1; }
-
-  .hero { padding: 64px 0 40px; text-align: center; background: radial-gradient(circle at 50% -20%, rgba(56,189,248,.15), transparent 60%); }
-  .hero h1 { font-size: 34px; }
-  .hero-tagline { margin: 10px auto 6px; color: var(--text-muted); font-size: 17px; max-width: 560px; }
-  .cta-note { font-size: 14px; color: var(--text-muted); }
-
-  .section { padding: 36px 0; }
-  .section h2 { font-size: 22px; margin-bottom: 20px; }
-
-  .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-  .project-card {
-    display: flex; flex-direction: column; gap: 12px; padding: 24px;
-    border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface);
-  }
-  .project-card-header { display: flex; align-items: center; gap: 14px; }
-  .project-icon {
-    width: 56px; height: 56px; border-radius: 14px; flex-shrink: 0;
-    display: grid; place-items: center;
-    background: linear-gradient(135deg, rgba(56,189,248,.2), rgba(129,140,248,.25));
-    font-size: 26px;
-  }
-  .project-icon img { width: 56px; height: 56px; border-radius: 14px; object-fit: cover; }
-  .project-card h3 { font-size: 19px; }
-  .project-badge {
-    display: inline-block; padding: 2px 10px; border-radius: 999px;
-    border: 1px solid var(--border); font-size: 12px; font-weight: 600; color: var(--text-muted);
-  }
-  .project-desc { color: var(--text-muted); font-size: 14px; flex-grow: 1; }
-  .card-actions { display: flex; gap: 10px; flex-wrap: wrap; }
-  .card-actions .btn { flex: 1; min-width: 120px; }
-
-  .site-footer { padding: 24px 0; border-top: 1px solid var(--border); text-align: center; color: var(--text-muted); font-size: 14px; }
-  .site-footer a { color: var(--accent); }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rainstudio Apps</title>
+  <meta name="description" content="Rainstudio by rainkidz — independent Android apps, free, safe, always up to date. Tubenime, Wispmail, Toyota Parts Price.">
+  <meta name="author" content="rainkidz">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Rainstudio Apps">
+  <meta property="og:description" content="Independent Android apps — free, safe, always up to date.">
+  <meta property="og:url" content="https://rainstudio.is-a.dev/">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <header class="site-header">
@@ -113,8 +21,9 @@
         <span class="brand-mark">RK</span>
         <span class="brand-name">rainkidz</span>
       </a>
-      <nav>
-        <a class="btn btn-ghost" href="https://github.com/rainkidz" target="_blank" rel="noopener">GitHub</a>
+      <nav class="header-nav">
+        <a href="https://github.com/rainkidz" target="_blank" rel="noopener">GitHub</a>
+        <a href="faq.html">FAQ</a>
       </nav>
     </div>
   </header>
@@ -122,67 +31,128 @@
   <main>
     <section class="hero">
       <div class="container">
-        <h1>Rainkidz Apps</h1>
-        <p class="hero-tagline">
-          Kumpulan aplikasi &amp; proyek by rainkidz — free, safe, and always up to date.
+        <span class="eyebrow"><span class="dot"></span>Rainfo<span style="color:var(--accent)">[r]</span>ge Labs</span>
+        <h1>Rainstudio Apps</h1>
+        <p class="hero-tagline">Independent Android apps — free, safe, always up to date.</p>
+        <p class="hero-note">No ads &amp; trackers. Open source on GitHub.</p>
+        <p class="hero-cta">
+          <a class="btn btn-primary" href="#catalog">Browse apps <img class="i i-16" src="assets/icons/ui/download.svg" alt=""></a>
         </p>
-        <p class="cta-note">No ads &amp; trackers. Open source on GitHub.</p>
+        <div class="trust-strip">
+          <div class="trust-item">
+            <img src="assets/icons/ui/shield-check.svg" alt="">
+            <div><b>No ads &amp; trackers</b><span>Zero telemetry SDKs</span></div>
+          </div>
+          <div class="trust-item">
+            <img src="assets/icons/ui/fingerprint.svg" alt="">
+            <div><b>SHA-256 verified</b><span>Signed reproducible</span></div>
+          </div>
+          <div class="trust-item">
+            <img src="assets/icons/ui/refresh.svg" alt="">
+            <div><b>Built-in updates</b><span>GitHub API checks</span></div>
+          </div>
+          <div class="trust-item">
+            <img src="assets/icons/ui/code.svg" alt="">
+            <div><b>Open source</b><span>Kotlin &amp; Jetpack</span></div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="section" id="projects">
+    <section class="section" id="catalog">
       <div class="container">
-        <div class="projects-grid">
+        <div class="section-head">
+          <h2>Application Catalog</h2>
+          <span class="side-label" id="build-count"></span>
+        </div>
+        <p class="section-sub">Production-ready releases signed by Rainstudio keys.</p>
+        <div id="apps-list">
+          <p class="loading">Loading apps...</p>
+        </div>
+      </div>
+    </section>
 
-          <article class="project-card">
-            <div class="project-card-header">
-              <div class="project-icon">
-                <img src="app-download/assets/icon.svg" alt="App Catalog icon"
-                     onerror="this.parentElement.textContent='📦'">
-              </div>
-              <div>
-                <h3>App Catalog</h3>
-                <span class="project-badge">Android · APK</span>
-              </div>
-            </div>
-            <p class="project-desc">
-              Katalog aplikasi Android by rainkidz (Tubenime, Wispmail, Toyota Parts Price, dan lainnya).
-              Download APK langsung atau langsung ke Play Store, cek versi lama, QR, &amp; verifikasi SHA-256.
-            </p>
-            <div class="card-actions">
-              <a class="btn btn-primary" href="app-download/">Buka Katalog</a>
-              <a class="btn" href="https://github.com/rainkidz/app-download/releases" target="_blank" rel="noopener">Releases</a>
-            </div>
-          </article>
+    <section class="section" id="install">
+      <div class="container">
+        <div class="section-head"><h2>How to install APKs</h2></div>
+        <p class="section-sub">Straightforward sideloading guide for Android 7.0 and above.</p>
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-num">1</div>
+            <h3>Download .apk</h3>
+            <p>Tap the download button above or grab the asset from GitHub Releases.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-num">2</div>
+            <h3>Open Files</h3>
+            <p>Tap the notification when finished or locate the file in your system Downloads folder.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-num">3</div>
+            <h3>Allow Source</h3>
+            <p>Toggle "Install unknown apps" for your browser/file manager if requested by Android.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-num">4</div>
+            <h3>Launch &amp; Enjoy</h3>
+            <p>Tap Install. The application is now ready in your app drawer without extra accounts.</p>
+          </div>
+        </div>
+        <div class="note-box">
+          <img src="assets/icons/ui/info.svg" alt="">
+          <p><b>Note on Google Play Protect</b><br>
+          Play Protect may show an "Unrecognized app" or "Blocked by Play Protect" prompt for direct sideloads. This is normal for apps distributed outside the Play Store because they are self-signed. You can safely choose "Install anyway" after verifying our published SHA-256 hash.</p>
+        </div>
+      </div>
+    </section>
 
-          <article class="project-card">
-            <div class="project-card-header">
-              <div class="project-icon">🐙</div>
-              <div>
-                <h3>GitHub</h3>
-                <span class="project-badge">Source code</span>
-              </div>
-            </div>
-            <p class="project-desc">
-              Source code, issues, dan rilis semua proyek ada di GitHub.
-              Temukan proyek open-source lainnya di sini.
-            </p>
-            <div class="card-actions">
-              <a class="btn btn-primary" href="https://github.com/rainkidz" target="_blank" rel="noopener">github.com/rainkidz</a>
-            </div>
-          </article>
+    <section class="section" id="about">
+      <div class="container">
+        <div class="about-card">
+          <p class="eyebrow-inline">● About Rainstudio</p>
+          <h2>Artisanal software, crafted for focus.</h2>
+          <p>Rainstudio is an independent one-person software lab crafting lightweight, privacy-respecting Android utilities. Everything is built with native Kotlin/Jetpack Compose, zero tracking SDKs, and open source code available on GitHub.</p>
+        </div>
+      </div>
+    </section>
 
+    <section class="section" id="faq-preview">
+      <div class="container">
+        <div class="section-head"><h2>Frequently Asked Questions</h2></div>
+        <p class="section-sub">Clear technical answers on security, architecture, and licensing. <a href="faq.html">View all →</a></p>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>Are these apps safe? <img src="assets/icons/ui/chevron-down.svg" alt=""></summary>
+            <div class="faq-body"><p>Yes. Every APK is built and released by rainkidz, hosted on GitHub Releases, and each app page shows a SHA-256 fingerprint so you can verify the file after downloading.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>Why does Play Protect warn during installation? <img src="assets/icons/ui/chevron-down.svg" alt=""></summary>
+            <div class="faq-body"><p>Play Protect warns about any app not installed through the Play Store. This is normal for sideloaded apps — review the SHA-256 fingerprint on the app page, then install anyway.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>How do updates work? <img src="assets/icons/ui/chevron-down.svg" alt=""></summary>
+            <div class="faq-body"><p>Each app checks for new versions on launch and shows a dialog with the changelog. Tap Update, the APK downloads automatically, and Android prompts you to install it.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>Where are old versions? <img src="assets/icons/ui/chevron-down.svg" alt=""></summary>
+            <div class="faq-body"><p>Open an app's detail page — the "Version Archive" table lists releases with direct download links. Older builds are also on <a href="https://github.com/rainkidz/app-download/releases" target="_blank" rel="noopener">GitHub Releases</a>.</p></div>
+          </details>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container">
-      <p>&copy; <span id="year">2026</span> rainkidz · <a href="https://github.com/rainkidz" target="_blank" rel="noopener">GitHub</a></p>
+    <div class="container footer-inner">
+      <p><span class="brand-inline">rainkidz</span> · © <span id="year">2026</span> rainkidz</p>
+      <nav>
+        <a href="https://github.com/rainkidz" target="_blank" rel="noopener">GitHub</a>
+        <a href="faq.html">FAQ</a>
+        <a href="privacy.html">Privacy</a>
+      </nav>
     </div>
   </footer>
 
-  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+  <script src="js/main.js"></script>
 </body>
 </html>

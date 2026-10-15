@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ - Rainstudio</title>
+  <meta name="description" content="Frequently asked questions: safety, APK sideloading, updates, and versions. Rainstudio by rainkidz.">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">RK</span>
+        <span class="brand-name">rainkidz</span>
+      </a>
+      <nav class="header-nav">
+        <a href="https://github.com/rainkidz" target="_blank" rel="noopener">GitHub</a>
+        <a href="faq.html">FAQ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <nav class="breadcrumb"><a href="index.html"><img class="i i-14" src="assets/icons/ui/arrow-left.svg" alt="">Back to catalog</a></nav>
+      <section style="padding:26px 0 8px">
+        <h1 style="font-size:32px">Frequently Asked Questions</h1>
+        <p class="section-sub" style="margin-top:8px">Clear technical answers on security, APK sideloading, updates, and studio architecture.</p>
+        <div class="filter-wrap">
+          <img src="assets/icons/ui/search.svg" alt="">
+          <input type="search" id="faq-filter" placeholder="Filter questions (e.g. SHA-256, Play Protect, updates)..." autocomplete="off">
+        </div>
+      </section>
+
+      <section class="faq-group" data-group>
+        <h2 class="faq-section-title"><img src="assets/icons/ui/shield-check.svg" alt="">Safety &amp; Trust</h2>
+        <div class="faq-list">
+          <details class="faq-item" open>
+            <summary>Are these apps safe to install? <img src="assets/icons/ui/plus.svg" alt=""></summary>
+            <div class="faq-body">
+              <p>Yes. Every APK here is built and released by rainkidz, hosted on GitHub Releases, and each app page shows a SHA-256 fingerprint so you can verify the file after downloading. The apps contain no ads, no trackers, and no analytics SDKs.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>Why does Google Play Protect show a warning? <img src="assets/icons/ui/plus.svg" alt=""></summary>
+            <div class="faq-body">
+              <p>Play Protect warns about any app that is not installed through the Play Store. This is normal for sideloaded apps. Review the SHA-256 fingerprint on the app page, then choose to install anyway.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>Toyota Parts Price needs a login? <img src="assets/icons/ui/plus.svg" alt=""></summary>
+            <div class="faq-body">
+              <p>Yes. Toyota Parts Price is an internal app for the TASTI network — login with a registered account is required. For credentials and authorization, contact <a href="mailto:support@tasti.id">support@tasti.id</a>.</p>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <section class="faq-group" data-group>
+        <h2 class="faq-section-title"><img src="assets/icons/ui/download.svg" alt="">Installation</h2>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>How do I install an APK? <img src="assets/icons/ui/plus.svg" alt=""></summary>
+            <div class="faq-body">
+              <ol>
+                <li>Pick an app and tap <b>Download APK</b>.</li>
+                <li>Open the downloaded APK file.</li>
+                <li>If a warning appears, enable <b>"Install unknown apps"</b> for your browser or file manager.</li>
+                <li>Tap <b>Install</b>, done.</li>
+              </ol>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>How do I verify the SHA-256 checksum? <img src="assets/icons/ui/plus.svg" alt=""></summary>
+            <div class="faq-body">
+              <p>Copy the fingerprint from the app page (the <b>Copy Hash</b> button), then hash the downloaded file and compare:</p>
+              <div class="code-block">Windows: certutil -hashfile app.apk SHA256
+Linux:   sha256sum app.apk</div>
+              <p>The output must match the fingerprint exactly.</p>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <section class="faq-group" data-group>
+        <h2 class="faq-section-title"><img src="assets/icons/ui/refresh.svg" alt="">Updates &amp; Versions</h2>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>How do updates work? <img src="assets/icons/ui/plus.svg" alt=""></summary>
+            <div class="faq-body">
+              <p>Each app checks for new versions on launch and shows a dialog with the changelog. Tap Update, the APK downloads automatically, and Android prompts you to install it. Apps outside Google Play cannot auto-update via the Play Store.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>Where can I find older versions? <img src="assets/icons/ui/plus.svg" alt=""></summary>
+            <div class="faq-body">
+              <p>Open an app's detail page — the <b>Version Archive</b> table lists releases with direct download links. Older builds are also on <a href="https://github.com/rainkidz/app-download/releases" target="_blank" rel="noopener">GitHub Releases</a>.</p>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <p class="loading hidden" id="faq-empty">No questions match your filter.</p>
+
+      <section>
+        <div class="contact-card">
+          <div>
+            <h3><img src="assets/icons/ui/info.svg" alt="">Still have questions?</h3>
+            <p>Check the source code on GitHub or reach out directly to the studio workshop.</p>
+          </div>
+          <div class="row">
+            <a class="btn btn-ghost btn-sm" href="https://github.com/rainkidz" target="_blank" rel="noopener">GitHub <img class="i i-14" src="assets/icons/ui/external-box.svg" alt=""></a>
+            <a class="btn btn-primary btn-sm" href="https://github.com/rainkidz/app-download/issues" target="_blank" rel="noopener">Contact Studio <img class="i i-14" src="assets/icons/ui/mail.svg" alt=""></a>
+          </div>
+        </div>
+      </section>
+      <div style="height:24px"></div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p><span class="brand-inline">rainkidz</span> · © <span id="year">2026</span> rainkidz</p>
+      <nav>
+        <a href="https://github.com/rainkidz" target="_blank" rel="noopener">GitHub</a>
+        <a href="faq.html">FAQ</a>
+        <a href="privacy.html">Privacy</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/faq.js"></script>
+</body>
+</html>

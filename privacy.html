@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — Tubenime · Rainstudio</title>
+  <meta name="description" content="Privacy policy for Tubenime by Rainstudio: what data is handled on-device, what is never collected, and how to contact us.">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">RK</span>
+        <span class="brand-name">rainkidz</span>
+      </a>
+      <nav class="header-nav">
+        <a href="https://github.com/rainkidz" target="_blank" rel="noopener">GitHub</a>
+        <a href="faq.html">FAQ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container privacy-doc">
+      <nav class="breadcrumb"><a href="app.html?slug=tubenime"><img class="i i-14" src="assets/icons/ui/arrow-left.svg" alt="">Back to Tubenime catalog</a></nav>
+
+      <div class="scope-bar">
+        <span><span class="dot"></span>Scope: Tubenime for Android · Architecture: Client-Only</span>
+        <span>Family: Rainstudio Open Source App</span>
+      </div>
+
+      <div class="privacy-meta"><span class="pill">Build v4.5.2</span></div>
+      <h1>Privacy Policy — Tubenime</h1>
+      <p class="privacy-dates">Last updated: <b>January 15, 2026</b> · Effective date: <b>October 12, 2025</b> · Document ID: <b>PDL-TN-2026-A</b></p>
+
+      <div class="summary-box">
+        <h3><img src="assets/icons/ui/shield-check.svg" alt="">Summary in Plain English</h3>
+        <p>Tubenime does not track you, does not have accounts, does not collect personal identity data, and processes video URLs entirely locally on your device. Zero remote analytics, zero proprietary tracking SDKs, zero centralized user logs.</p>
+      </div>
+
+      <section class="privacy-sec">
+        <h2><span class="num">01</span>Data We Collect</h2>
+        <p>Tubenime is designed strictly around the principle of data minimization. The application operates solely as an on-device utility and media manifest parser.</p>
+        <div class="mini-box">
+          <h4>Explicitly Handled Data:</h4>
+          <ul>
+            <li class="ok"><img src="assets/icons/ui/shield-check.svg" alt=""><span><b>Media Resource URLs:</b> Web links shared via Android Intent or pasted by you into the interface (e.g., links from supported public video portals) strictly to fetch stream addresses.</span></li>
+            <li class="ok"><img src="assets/icons/ui/shield-check.svg" alt=""><span><b>Local UI Preferences:</b> Dark mode preference, preferred container format (MP4/WEBM), and designated local download folder paths saved exclusively inside Android SharedPreferences.</span></li>
+          </ul>
+        </div>
+        <div class="mini-box mt-16">
+          <h4>Data We Never Collect:</h4>
+          <ul>
+            <li class="no"><img src="assets/icons/ui/x-circle.svg" alt=""><span>Names, Emails, or Phone Numbers</span></li>
+            <li class="no"><img src="assets/icons/ui/x-circle.svg" alt=""><span>Precise or Coarse GPS Location</span></li>
+            <li class="no"><img src="assets/icons/ui/x-circle.svg" alt=""><span>Advertising IDs (AAID)</span></li>
+            <li class="no"><img src="assets/icons/ui/x-circle.svg" alt=""><span>Hardware Fingerprints or MAC</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="privacy-sec">
+        <h2><span class="num">02</span>How We Use Data</h2>
+        <p>Input URLs are parsed dynamically in runtime memory to decode publicly available video stream endpoints and captions.</p>
+        <p><b>Local Parsing Only:</b> The parsing engine operates directly within your client runtime. No intermediary proxy, scraping gateway, or telemetry aggregator receives the link.</p>
+        <p><b>No User Profiling:</b> We maintain zero database records of queries, parsed links, or historical downloads. Your search or stream history is kept solely within your device's private SQLite sandbox.</p>
+        <p><b>No Commercial Exploitation:</b> Your activity is never packaged, traded, sold, or shared with commercial brokers or ad exchanges.</p>
+      </section>
+
+      <section class="privacy-sec">
+        <h2><span class="num">03</span>Data Storage &amp; Security</h2>
+        <p>Tubenime has zero cloud infrastructure. We operate zero centralized servers, zero remote databases, and zero authentication clusters.</p>
+        <div class="mini-grid">
+          <div class="mini-box mono-sm">
+            <h4>Physical File Storage</h4>
+            <p>Media files, audio buffers, and temporary segments are written solely to directories chosen by you via Android Storage Access Framework (SAF) or scoped app storage.</p>
+          </div>
+          <div class="mini-box mono-sm">
+            <h4>Ephemeral Memory Scrubber</h4>
+            <p>Stream parsing buffers and HTTP chunk headers are automatically purged upon download completion or app termination.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="privacy-sec">
+        <h2><span class="num">04</span>Third-Party Services &amp; Network Requests</h2>
+        <p>When performing stream resolutions or downloads, Tubenime functions as a standard user-agent client establishing direct HTTP/HTTPS connections to media hosting providers.</p>
+        <div class="mini-box mono-sm">
+          <h4>Direct Target Platforms</h4>
+          <p>Connections are routed directly to public media CDNs (such as YouTube, TikTok, Instagram, Threads, and Facebook) based on the URL provided. Those platforms may observe your IP address and standard HTTP request headers, subject to their respective terms and privacy policies.</p>
+        </div>
+        <div class="mini-box mono-sm mt-16">
+          <h4>Zero Third-Party SDK Manifest</h4>
+          <p>Our source code and binary release artifacts include:</p>
+          <div class="kv">
+            <div>• NO Google Firebase Analytics or Crashlytics</div>
+            <div>• NO Google AdMob, Unity, or AppLovin SDKs</div>
+            <div>• NO Sentry, Adjust, or AppsFlyer trackers</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="privacy-sec">
+        <h2><span class="num">05</span>Children's Privacy</h2>
+        <p>Our software does not address or knowingly solicit information from children under 13 (or under 16 in certain EEA jurisdictions). Because Tubenime does not require account registration, collect personal profiles, or maintain server-side records, we do not store child-identifiable telemetry in any format.</p>
+      </section>
+
+      <section class="privacy-sec">
+        <h2><span class="num">06</span>Changes to This Policy</h2>
+        <p>We may periodically review and update this privacy statement to reflect improvements in on-device architecture, new supported platforms, or regulatory requirements.</p>
+        <div class="audit-row">
+          <span>Version audit trail available on GitHub</span>
+          <a href="https://github.com/rainkidz/dropdesk/commits" target="_blank" rel="noopener">View Commit History <img class="i i-14" src="assets/icons/ui/external.svg" alt=""></a>
+        </div>
+      </section>
+
+      <section class="privacy-sec">
+        <h2><span class="num">07</span>Contact Us</h2>
+        <p>For questions, architectural audits, or clarifications regarding this privacy policy, you are welcome to file a public issue or reach our development studio directly:</p>
+        <div class="contact-grid">
+          <a href="https://github.com/rainkidz/dropdesk/issues" target="_blank" rel="noopener">
+            <b><img src="assets/icons/ui/code.svg" alt="">GitHub Issues</b>
+            <span>github.com/rainkidz/dropdesk</span>
+          </a>
+          <a href="https://github.com/rainkidz/dropdesk" target="_blank" rel="noopener">
+            <b><img src="assets/icons/ui/external-box.svg" alt="">Source Repository</b>
+            <span>github.com/rainkidz/dropdesk</span>
+          </a>
+        </div>
+      </section>
+
+      <div class="arch-note">
+        <h3><img src="assets/icons/ui/shield-check.svg" alt="">Rainstudio Privacy Architecture Note</h3>
+        <p>This document serves as the shared minimal-privacy blueprint across Rainstudio software. Sister applications customize specific local data models while honoring identical zero-tracker baselines:</p>
+        <div class="arch-table">
+          <div class="arow"><div><b>Wispmail</b></div><div><span>Temporary disposable session tokens encrypted on local hardware</span></div></div>
+          <div class="arow"><div><b>Toyota Parts Price</b></div><div><span>Internal catalog authentication keys restricted to regional intranet sandbox</span></div></div>
+        </div>
+      </div>
+      <div style="height:28px"></div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p><span class="brand-inline">rainkidz</span> · © <span id="year">2026</span> rainkidz</p>
+      <nav>
+        <a href="https://github.com/rainkidz" target="_blank" rel="noopener">GitHub</a>
+        <a href="faq.html">FAQ</a>
+        <a href="privacy.html">Privacy</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
